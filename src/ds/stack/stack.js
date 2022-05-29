@@ -4,11 +4,11 @@ class Stack {
 
     this.stack = {}
     this.length = elements.length
-    this.constructStack(this.stack, elements)
+    this.buildStack(this.stack, elements)
   }
 
   push (element) {
-    this.stack[++this.length] = element
+    this.stack[this.length++] = element
   }
 
   pop () {
@@ -21,7 +21,7 @@ class Stack {
   }
 
   peek () {
-    return this.stack[this.length]
+    return this.stack[this.length - 1]
   }
 
   isEmpty () {
@@ -37,7 +37,7 @@ class Stack {
     return this.length
   }
 
-  constructStack (stack, elements) {
+  buildStack (stack, elements) {
     for (let i = 0; i < elements.length; i++) {
       stack[i] = elements[i]
     }

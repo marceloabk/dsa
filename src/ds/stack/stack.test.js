@@ -28,6 +28,14 @@ describe('Stack', () => {
     expect(element).toBe(stack.peek())
   })
 
+  it('should get the last added element from new stack', () => {
+    const newStack = new Stack()
+    const element = 4
+    newStack.push(element)
+
+    expect(element).toBe(newStack.peek())
+  })
+
   it('should remove all elements from the stack', () => {
     stack.clear()
     expect(stack).toHaveLength(0)
