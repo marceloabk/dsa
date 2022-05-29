@@ -1,5 +1,5 @@
-import { Stack } from './src/ds/index.js'
+import { Stack, Queue } from './src/ds/index.js'
 
 export {
-  Stack
+  Stack, Queue
 }
