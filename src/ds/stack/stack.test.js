@@ -8,16 +8,16 @@ describe('Stack', () => {
   })
 
   it('should add an element to the stack', () => {
-    const lengthBefore = stack.size()
+    const lengthBefore = stack.length
     stack.push(4)
-    const lengthAfter = stack.size()
+    const lengthAfter = stack.length
     expect(lengthAfter).toBe(lengthBefore + 1)
   })
 
   it('should remove an element from the stack', () => {
-    const lengthBefore = stack.size()
+    const lengthBefore = stack.length
     stack.pop()
-    const lengthAfter = stack.size()
+    const lengthAfter = stack.length
     expect(lengthAfter).toBe(lengthBefore - 1)
   })
 
