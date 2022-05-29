@@ -18,7 +18,7 @@ class Stack {
     if (this.isEmpty) return undefined
 
     const element = this.peek()
-    delete this.#stack[this.#length--]
+    delete this.#stack[--this.#length]
 
     return element
   }
@@ -44,6 +44,10 @@ class Stack {
     for (let i = 0; i < elements.length; i++) {
       stack[i] = elements[i]
     }
+  }
+
+  toString () {
+    return Object.values(this.#stack).join()
   }
 }
 
