@@ -46,6 +46,16 @@ describe('LinkedList', () => {
 
       expect(linkedList.indexOf(element)).toBe(firstIndex)
     })
+
+    it('should deal with index that doesn`t exist', () => {
+      linkedList = new LinkedList()
+      const element = 0
+      const index = 42
+
+      expect(() => {
+        linkedList.insert(element, index)
+      }).toThrow('The position does not exist')
+    })
   })
 
   describe('when removing', () => {

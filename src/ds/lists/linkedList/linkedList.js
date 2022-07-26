@@ -1,4 +1,4 @@
-import Node from '../node.js'
+import Node from './node.js'
 
 class LinkedList {
   #head
@@ -34,6 +34,7 @@ class LinkedList {
       this.#head = node
     } else {
       const previous = this.getElementAt(position - 1)
+      if (previous === undefined) throw Error('The position does not exist')
 
       node.next = previous.next
       previous.next = node
@@ -43,6 +44,8 @@ class LinkedList {
   }
 
   getElementAt (index) {
+    if (index > this.#length) return undefined
+
     let currentNode = this.#head
     for (let i = 0; i < index; i++) {
       currentNode = currentNode.next
