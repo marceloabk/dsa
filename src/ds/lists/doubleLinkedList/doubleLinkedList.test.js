@@ -92,6 +92,50 @@ describe('doubleLinkedList', () => {
     })
   })
 
+  describe('when traversing', () => {
+    it('should be able to traverse and go back to the first node', () => {
+      const doubleLinkedList = new DoubleLinkedList()
+      const elements = [1, 2, 3, 4, 5, 6]
+
+      for (const element of elements) {
+        doubleLinkedList.push(element)
+      }
+
+      let elementsCount = 1 // starts with 1 because while will not count last element
+      let current = doubleLinkedList.head
+      while (current.next) {
+        current = current.next
+        elementsCount++
+      }
+
+      while (current.prev) {
+        current = current.prev
+      }
+
+      expect(elementsCount).toBe(elements.length)
+      expect(current).toBe(doubleLinkedList.head)
+    })
+
+    it('should be able to traverse and go back to the first node on a prebuilt list', () => {
+      const elements = [1, 2, 3, 4, 5, 6]
+      const doubleLinkedList = new DoubleLinkedList(elements)
+
+      let elementsCount = 1 // starts with 1 because while will not count last element
+      let current = doubleLinkedList.head
+      while (current.next) {
+        current = current.next
+        elementsCount++
+      }
+
+      while (current.prev) {
+        current = current.prev
+      }
+
+      expect(elementsCount).toBe(elements.length)
+      expect(current).toBe(doubleLinkedList.head)
+    })
+  })
+
   it('should return error if an invalid constructor is used', () => {
     expect(() => {
       // eslint-disable-next-line no-new
