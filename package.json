@@ -1,5 +1,5 @@
 {
-  "name": "dsa",
+  "name": "dsa-toolkit",
   "version": "0.1.0",
   "description": "Node data structures and algorithms",
   "main": "index.js",
