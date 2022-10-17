@@ -1,6 +1,6 @@
 {
   "name": "dsa-toolkit",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Node data structures and algorithms",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,16 @@
     "type": "git",
     "url": "git+https://github.com/marceloabk/dsa.git"
   },
+  "keywords": [
+    "dsa",
+    "ds",
+    "data structures",
+    "algorithms",
+    "stack",
+    "queue",
+    "linked list",
+    "double linked list"
+  ],
   "author": "Marcelo Cristiano",
   "license": "MIT",
   "type": "module",
