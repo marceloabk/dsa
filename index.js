@@ -1,5 +1,17 @@
-import { Stack, Queue, Deque, LinkedList, DoubleLinkedList } from './src/ds/index.js'
+import {
+  Stack,
+  Queue,
+  Deque,
+  LinkedList,
+  DoubleLinkedList,
+  CircularLinkedList
+} from './src/ds/index.js'
 
 export {
-  Stack, Queue, Deque, LinkedList, DoubleLinkedList
+  Stack,
+  Queue,
+  Deque,
+  LinkedList,
+  DoubleLinkedList,
+  CircularLinkedList
 }
