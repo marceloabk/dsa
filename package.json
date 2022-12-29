@@ -7,11 +7,6 @@
     "require": "./dist/index.cjs",
     "import": "./index.js"
   },
-  "release": {
-    "branches": [
-      "main"
-    ]
-  },
   "scripts": {
     "build": "esbuild index.js --bundle --platform=node --outfile=dist/index.cjs",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js .",
