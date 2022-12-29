@@ -1,6 +1,6 @@
 {
   "name": "dsa-toolkit",
-  "version": "0.1.2",
+  "version": "0.0.0-development",
   "description": "Node data structures and algorithms",
   "main": "index.js",
   "exports": {
@@ -8,17 +8,20 @@
     "import": "./index.js"
   },
   "release": {
-    "branches": ["main"]
+    "branches": [
+      "main"
+    ]
   },
   "scripts": {
     "build": "esbuild index.js --bundle --platform=node --outfile=dist/index.cjs",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js .",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marceloabk/dsa.git"
+    "url": "https://github.com/marceloabk/dsa.git"
   },
   "keywords": [
     "dsa",
