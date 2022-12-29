@@ -3,7 +3,12 @@
   "version": "0.1.2",
   "description": "Node data structures and algorithms",
   "main": "index.js",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "import": "./index.js"
+  },
   "scripts": {
+    "build": "esbuild index.js --bundle --platform=node --outfile=dist/index.cjs",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js .",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
@@ -31,6 +36,7 @@
   "homepage": "https://github.com/marceloabk/dsa#readme",
   "devDependencies": {
     "@types/jest": "^27.5.1",
+    "esbuild": "^0.16.12",
     "eslint": "^8.16.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
