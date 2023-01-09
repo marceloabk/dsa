@@ -40,6 +40,7 @@ Implementation of multiple data structures
 
 # Data Structures
 
+  - [Set](https://github.com/marceloabk/dsa/blob/main/src/ds/set/set.js)
   - [Stack](https://github.com/marceloabk/dsa/blob/main/src/ds/stack/stack.js)
   - [Queue](https://github.com/marceloabk/dsa/blob/main/src/ds/queue/queue.js)
   - [Deque](https://github.com/marceloabk/dsa/blob/main/src/ds/deque/deque.js)
