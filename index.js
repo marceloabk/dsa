@@ -1,4 +1,5 @@
 import {
+  Set,
   Stack,
   Queue,
   Deque,
@@ -8,6 +9,7 @@ import {
 } from './src/ds/index.js'
 
 export {
+  Set,
   Stack,
   Queue,
   Deque,
