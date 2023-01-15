@@ -1,7 +1,7 @@
 class Set {
   #set
 
-  constructor (elements) {
+  constructor (elements = []) {
     if (!Array.isArray(elements)) throw Error('Invalid set constructor')
     this.#set = new Map()
     this.#buildList(elements)
@@ -46,6 +46,20 @@ class Set {
 
     for (const element of elements) {
       this.#set.set(element, element)
+    }
+  }
+
+  [Symbol.iterator] () {
+    let index = 0
+    const data = this.values()
+    return {
+      next: () => {
+        if (index < data.length) {
+          return { value: data[index++], done: false }
+        } else {
+          return { done: true }
+        }
+      }
     }
   }
 }
