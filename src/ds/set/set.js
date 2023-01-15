@@ -49,6 +49,53 @@ class Set {
     }
   }
 
+  union (otherSet) {
+    if (!(otherSet instanceof Set)) throw Error('Invalid parameter type')
+    return new Set([...this, ...otherSet])
+  }
+
+  intersection (otherSet) {
+    if (!(otherSet instanceof Set)) throw Error('Invalid parameter type')
+
+    // finding the smallest number of elements reduces the total number of comparisons
+    const smallerSet = otherSet.size < this.size ? otherSet : this
+    const biggerSet = otherSet.size < this.size ? this : otherSet
+
+    const newSet = new Set()
+    for (const element of smallerSet) {
+      if (biggerSet.has(element)) newSet.add(element)
+    }
+
+    return newSet
+  }
+
+  difference (otherSet) {
+    if (!(otherSet instanceof Set)) throw Error('Invalid parameter type')
+
+    const newSet = new Set(this.values())
+    if (otherSet.size < newSet.size) {
+      for (const element of otherSet) {
+        if (newSet.has(element)) newSet.delete(element)
+      }
+    } else {
+      for (const element of newSet) {
+        if (otherSet.has(element)) newSet.delete(element)
+      }
+    }
+
+    return newSet
+  }
+
+  subset (otherSet) {
+    if (this.size > otherSet.size) return false
+
+    for (const element of this) {
+      if (!otherSet.has(element)) return false
+    }
+
+    return true
+  }
+
   [Symbol.iterator] () {
     let index = 0
     const data = this.values()
