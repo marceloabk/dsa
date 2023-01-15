@@ -5,15 +5,7 @@ Implementation of multiple data structures
 ```js
   // CommonJS
 
-  const { Queue, LinkedList } = require("dsa-toolkit")
-
-  const queue = new Queue([1, 2, 3, 4])
-
-  queue.enqueue(5)
-  console.log(queue.peek())     // 1
-  console.log(queue.dequeue())  // 1
-  console.log(queue.peek())     // 2
-  console.log(`${queue}`)       // 2,3,4,5
+  const { LinkedList } = require("dsa-toolkit")
 
   const ll = new LinkedList([1, 2])
   ll.push(3)
@@ -23,7 +15,7 @@ Implementation of multiple data structures
 
 ```js
   // ES Modules 
-  import { LinkedList, Queue } from 'dsa'
+  import { Queue, Set } from 'dsa'
 
   const queue = new Queue([1, 2, 3, 4])
 
@@ -33,9 +25,20 @@ Implementation of multiple data structures
   console.log(queue.peek())     // 2
   console.log(`${queue}`)       // 2,3,4,5
 
-  const ll = new LinkedList([1, 2])
-  ll.push(3)
-  console.log(`${ll}`)          // 1,2,3
+  const set1 = new Set([1, 2, 3])
+  const set2 = new Set([2, 3, 4])
+
+  const unionSet = set1.union(set2)
+  const intersectionSet = set1.intersection(set2)
+  const differenceSet = set1.difference(set2)
+
+  const set3 = new Set([1])
+  const isSubset = set3.subset(set1)
+
+  console.log('union', unionSet.values()) // union [ 1, 2, 3, 4 ]
+  console.log('intersection', intersectionSet.values()) // intersection [ 2, 3 ]
+  console.log('difference', differenceSet.values()) // difference [ 1 ]
+  console.log('is subset', isSubset) // is subset true
 ```
 
 # Data Structures
