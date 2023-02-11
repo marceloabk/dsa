@@ -5,7 +5,8 @@ import {
   Deque,
   LinkedList,
   DoubleLinkedList,
-  CircularLinkedList
+  CircularLinkedList,
+  Graph
 } from './src/ds/index.js'
 
 export {
@@ -15,5 +16,6 @@ export {
   Deque,
   LinkedList,
   DoubleLinkedList,
-  CircularLinkedList
+  CircularLinkedList,
+  Graph
 }

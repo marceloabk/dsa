@@ -5,6 +5,7 @@ import DoubleLinkedList from './lists/doubleLinkedList/doubleLinkedList.js'
 import LinkedList from './lists/linkedList/linkedList.js'
 import CircularLinkedList from './lists/circularLinkedList/circularLinkedList.js'
 import Set from './set/set.js'
+import Graph from './graph/graph.js'
 
 export {
   Set,
@@ -13,5 +14,6 @@ export {
   Deque,
   LinkedList,
   DoubleLinkedList,
-  CircularLinkedList
+  CircularLinkedList,
+  Graph
 }
