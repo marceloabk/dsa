@@ -32,13 +32,7 @@ class Set {
   }
 
   values () {
-    const items = []
-
-    for (const [, value] of this.#set) {
-      items.push(value)
-    }
-
-    return items
+    return [...this]
   }
 
   #buildList (elements) {
@@ -97,12 +91,12 @@ class Set {
   }
 
   [Symbol.iterator] () {
-    let index = 0
-    const data = this.values()
+    const data = this.#set.values()
     return {
       next: () => {
-        if (index < data.length) {
-          return { value: data[index++], done: false }
+        const { value, done } = data.next()
+        if (!done) {
+          return { value, done: false }
         } else {
           return { done: true }
         }
