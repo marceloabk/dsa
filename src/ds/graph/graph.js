@@ -1,3 +1,6 @@
+import Queue from '../queue/queue.js'
+import Set from '../set/set.js'
+
 class Graph {
   #graph
   #isDirected
@@ -34,6 +37,28 @@ class Graph {
 
   get vertices () {
     return Object.keys(this.#graph)
+  }
+
+  static bfs (start, graph = this.#graph, callback = console.log) {
+    if (!graph.vertices.includes(start)) throw Error('Graph does not have the start vertex')
+
+    const queue = new Queue([start])
+    const visited = new Set([start])
+
+    while (!queue.isEmpty) {
+      const el = queue.dequeue()
+
+      if (callback) {
+        callback(el)
+      }
+
+      for (const [vertex] of graph.siblings(el)) {
+        if (!(visited.has(vertex))) {
+          visited.add(vertex)
+          queue.enqueue(vertex)
+        }
+      }
+    }
   }
 
   toString () {
