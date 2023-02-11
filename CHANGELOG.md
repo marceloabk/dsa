@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/marceloabk/dsa/compare/v1.4.0...v1.5.0) (2023-02-11)
+
+
+### Features
+
+* update set iterator and values ([1250e8f](https://github.com/marceloabk/dsa/commit/1250e8f43f1396760c75f228a55dcfcd70e1706c))
+
 # [1.4.0](https://github.com/marceloabk/dsa/compare/v1.3.0...v1.4.0) (2023-01-15)
 
 
